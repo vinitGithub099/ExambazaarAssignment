@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
+// import './App.css';
+import Home from './components/Home';
+import Navigation from './components/Navbar/Navigation';
+import SideBar from './components/Sidebar/SideBar';
+import { Link, Route, Routes } from 'react-router-dom';
+import UnNavbar from './components/Sidebar/UnNavbar';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Link index="true" to="/" />
+      
+      <Routes>
+        <Route index exact path="/" element={<Home />}/>
+        <Route index exact path="/navbar" element={<Navigation />}/>
+        <Route index exact path="/unacademy_navbar" element={<UnNavbar />}/>
+        <Route index exact path="/sidebar" element={<SideBar />}/>
+      </Routes>
+      
+    </>
   );
 }
 
 export default App;
+
+
+/* 
+
+npm install -D tailwindcss
+npx tailwindcss init
+
+*/
